@@ -1,0 +1,44 @@
+{%extends 'base.html.twig' %}
+
+{% block title %}
+{{parent()}} - Your Virtual Library
+{% endblock %}
+
+{% block body %}
+
+<h1>Virtual Library: a place to store books read and wish to read</h1>
+
+<div>
+    You already read a total of {{ numberOfBooksRead }} books !!
+
+    {% if numberOfBooksRead > 9 %}
+        <p>
+            That's a lot of books already ! Good job ! 
+        </p>
+    {% endif %}
+</div>
+
+<div>
+    <h2> My Current Book </h2>
+    <table>
+        <tr>
+            <th>Title</th>
+            <td>{{ myBook.title }}</td>
+        </tr>
+        <tr>
+            <th>Author</th>
+            <td>{{ myBook.author }}</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>{{ myBook.status }}</td>
+        </tr>
+        <tr>
+            <th>Chronology</th>
+            <td>{{ myBook.chronology }}</td>
+        </tr>
+    </table>
+
+</div>
+
+{% endblock %}
